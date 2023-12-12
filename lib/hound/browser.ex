@@ -17,6 +17,7 @@ defmodule Hound.Browser do
       |> Hound.Metadata.append(opts[:metadata])
 
     capabilities = %{browserName: browser_name}
+    IO.puts "browswer_name: #{browser_name}"
     default_capabilities = browser.default_capabilities(user_agent)
     additional_capabilities = opts[:additional_capabilities] || %{}
 
