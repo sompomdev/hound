@@ -23,7 +23,7 @@ defmodule Hound.Browser do
     end
 
     
-    IO.puts "browswer_name: #{capabilities}"
+    IO.puts "capabilities: #{capabilities}"
     default_capabilities = browser.default_capabilities(user_agent)
     additional_capabilities = opts[:additional_capabilities] || %{}
 
