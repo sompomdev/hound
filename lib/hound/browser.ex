@@ -17,7 +17,7 @@ defmodule Hound.Browser do
       |> Hound.Metadata.append(opts[:metadata])
 
     capabilities = if browser_name === "chrome_headless" do
-      %{browserName: :chrome}
+      %{browserName: "chrome"}
     else
       %{browserName: browser_name}
     end
