@@ -16,7 +16,13 @@ defmodule Hound.Browser do
       user_agent(opts[:user_agent] || browser.default_user_agent)
       |> Hound.Metadata.append(opts[:metadata])
 
-    capabilities = %{browserName: browser_name}
+    capabilities = if browser_name === "chrome_headless" do
+      %{browserName: "chrome"}
+    else
+      %{browserName: browser_name}
+    end
+
+    
     IO.puts "browswer_name: #{browser_name}"
     default_capabilities = browser.default_capabilities(user_agent)
     additional_capabilities = opts[:additional_capabilities] || %{}
